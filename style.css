@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+
+body {
+  padding: 40px;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  background: #6aaee6;
+  padding: 2px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background: #6aaee6;
+}
+
+/* buttons */
+
+.btn {
+  width: 50px;
+  height: 50px;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.15s linear;
+}
+
+.btn:hover {
+  filter: brightness(1.15);
+}
+
+.add { background: #e6a93b; }
+.del { background: #9f1d14; }
+
+/* positioning */
+
+.add-col {
+  position: absolute;
+  top: 0;
+  right: -60px;
+}
+
+.add-row {
+  position: absolute;
+  left: 0;
+  bottom: -60px;
+}
+
+.del-row {
+  position: absolute;
+  left: -60px;
+  top: 0;
+  display: none;
+}
+
+.del-col {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  display: none;
+}
