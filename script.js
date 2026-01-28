@@ -31,8 +31,8 @@ function render() {
 }
 
 function updateAddButtons() {
-  addColBtn.style.height = rows * STEP - GAP + "px";
-  addRowBtn.style.width = cols * STEP - GAP + "px";
+ addColBtn.style.height = "50px"-GAP;
+addRowBtn.style.width  = "50px"-GAP;
 }
 
 grid.addEventListener("mousemove", e => {

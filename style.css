@@ -13,7 +13,7 @@ body {
 .grid {
   display: grid;
   gap: 2px;
-  background: #6aaee6;
+  background: #142e14;
   padding: 2px;
 }
 
@@ -47,25 +47,25 @@ body {
 .add-col {
   position: absolute;
   top: 0;
-  right: -60px;
+  right: -51px;
 }
 
 .add-row {
   position: absolute;
   left: 0;
-  bottom: -60px;
+  bottom: -51px;
 }
 
 .del-row {
   position: absolute;
-  left: -60px;
+  left: -51px;
   top: 0;
   display: none;
 }
 
 .del-col {
   position: absolute;
-  top: -60px;
+  top: -51px;
   left: 0;
   display: none;
 }
