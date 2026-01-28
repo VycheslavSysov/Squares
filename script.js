@@ -30,10 +30,10 @@ function render() {
   updateAddButtons();
 }
 
-function updateAddButtons() {
- addColBtn.style.height = "50px"-GAP;
-addRowBtn.style.width  = "50px"-GAP;
-}
+
+ addColBtn.style.height = "50px";
+addRowBtn.style.width  = "50px";
+
 
 grid.addEventListener("mousemove", e => {
   const cell = e.target.closest(".cell");
