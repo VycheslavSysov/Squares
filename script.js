@@ -10,8 +10,8 @@ const delColBtn = document.getElementById("delCol");
 
 let rows = 4;
 let cols = 4;
-let hoverRow = null;
-let hoverCol = null;
+let hoverCol=null;
+let hoverRow=null;
 
 function render() {
   grid.innerHTML = "";
@@ -31,7 +31,7 @@ function render() {
 }
 
 
- addColBtn.style.height = "50px";
+addColBtn.style.height = "50px";
 addRowBtn.style.width  = "50px";
 
 
