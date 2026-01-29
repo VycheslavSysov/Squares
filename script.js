@@ -68,7 +68,10 @@ grid.addEventListener("mousemove", e => {
   }
 });
 
-grid.addEventListener("mouseleave", () => {
+grid.addEventListener("mouseleave", (event) => {
+   const { relatedTarget } = event;
+   console.log(relatedTarget);
+
       hoverRow = null;
       hoverCol = null;
   setTimeout(() => {
