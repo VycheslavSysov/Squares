@@ -8,6 +8,7 @@ const addColBtn = document.getElementById("addCol");
 const delRowBtn = document.getElementById("delRow");
 const delColBtn = document.getElementById("delCol");
 
+
 let rows = 4;
 let cols = 4;
 let hoverCol=null;
@@ -57,12 +58,15 @@ grid.addEventListener("mousemove", e => {
   }
 });
 
-grid.addEventListener("mouseleave", () => {
+grid.addEventListener("mouseleave", e => {
   delRowBtn.style.display = "none";
   delColBtn.style.display = "none";
   hoverRow = null;
   hoverCol = null;
-});
+})
+
+
+
 
 addRowBtn.addEventListener("click", () => {
   rows++;
