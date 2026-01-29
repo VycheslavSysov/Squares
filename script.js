@@ -68,13 +68,12 @@ grid.addEventListener("mousemove", e => {
   }
 });
 
-grid.addEventListener("mouseleave", () => {
+grid.addEventListener("mouseleave", (event) => {
+   const { relatedTarget } = event;
+   console.log(relatedTarget);
+
       hoverRow = null;
       hoverCol = null;
-  setTimeout(() => {
-      delRowBtn.style.display = "none";
-      delColBtn.style.display = "none";
-  }, 500);
 });
 
 delRowBtn.addEventListener("click", (e) => {
