@@ -58,16 +58,6 @@ grid.addEventListener("mousemove", e => {
   }
 });
 
-grid.addEventListener("mouseleave", e => {
-  delRowBtn.style.display = "none";
-  delColBtn.style.display = "none";
-  hoverRow = null;
-  hoverCol = null;
-})
-
-
-
-
 addRowBtn.addEventListener("click", () => {
   rows++;
   render();

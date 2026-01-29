@@ -69,3 +69,12 @@ body {
   left: 0;
   display: none;
 }
+.del-btn {
+    position: absolute;
+    padding: 10px;
+    margin: -10px;
+}
+
+#delRow:hover, #delCol:hover {
+    display: block !important;
+}
