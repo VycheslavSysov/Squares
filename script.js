@@ -74,10 +74,6 @@ grid.addEventListener("mouseleave", (event) => {
 
       hoverRow = null;
       hoverCol = null;
-  setTimeout(() => {
-      delRowBtn.style.display = "none";
-      delColBtn.style.display = "none";
-  }, 500);
 });
 
 delRowBtn.addEventListener("click", (e) => {
