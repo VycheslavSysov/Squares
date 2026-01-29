@@ -11,8 +11,11 @@ const delColBtn = document.getElementById("delCol");
 
 let rows = 4;
 let cols = 4;
-let hoverCol=null;
-let hoverRow=null;
+let hoverCol = null;
+let hoverRow = null;
+let deleteRowIndex = null;
+let deleteColIndex = null;
+
 
 function render() {
   grid.innerHTML = "";
