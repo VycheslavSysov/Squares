@@ -13,8 +13,8 @@ body {
 .grid {
   display: grid;
   gap: 2px;
-  background: #142e14;
-  padding: 2px;
+  background: #ffffff;
+  padding: 0;
 }
 
 .cell {
@@ -28,7 +28,7 @@ body {
 .btn {
   width: 50px;
   height: 50px;
-  border: none;
+  border: 2px solid #071829;
   color: white;
   font-size: 28px;
   cursor: pointer;
@@ -47,25 +47,25 @@ body {
 .add-col {
   position: absolute;
   top: 0;
-  right: -51px;
+  right: -52px;
 }
 
 .add-row {
   position: absolute;
   left: 0;
-  bottom: -51px;
+  bottom: -52px;
 }
 
 .del-row {
   position: absolute;
-  left: -51px;
+  left: -52px;
   top: 0;
   display: none;
 }
 
 .del-col {
   position: absolute;
-  top: -51px;
+  top: -52px;
   left: 0;
   display: none;
 }

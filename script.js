@@ -72,8 +72,8 @@ grid.addEventListener("mouseleave", (event) => {
    const { relatedTarget } = event;
    console.log(relatedTarget);
 
-      hoverRow = null;
-      hoverCol = null;
+   hoverRow = null;
+   hoverCol = null;
 });
 
 delRowBtn.addEventListener("click", (e) => {
