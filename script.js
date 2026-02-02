@@ -69,34 +69,53 @@ grid.addEventListener("mousemove", e => {
 });
 
 grid.addEventListener("mouseleave", (event) => {
-   const { relatedTarget } = event;
-   console.log(relatedTarget);
+  const { relatedTarget } = event;
 
-      hoverRow = null;
-      hoverCol = null;
+  if (!relatedTarget ||
+      (relatedTarget.id !== 'delRow' && relatedTarget.id !== 'delCol')) {
+
+    hoverRow = null;
+    hoverCol = null;
+    delRowBtn.style.display = "none";
+    delColBtn.style.display = "none";
+  }
+});
+
+delRowBtn.addEventListener("mouseenter", () => {
+  if (rows > 1 && deleteRowIndex !== null) {
+    delRowBtn.style.display = "block";
+    delRowBtn.style.transform = `translateY(${deleteRowIndex * STEP}px)`;
+  }
+});
+
+delColBtn.addEventListener("mouseenter", () => {
+  if (cols > 1 && deleteColIndex !== null) {
+    delColBtn.style.display = "block";
+    delColBtn.style.transform = `translateX(${deleteColIndex * STEP}px)`;
+  }
 });
 
 delRowBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+
   e.stopPropagation();
 
   if (rows > 1 && deleteRowIndex !== null) {
 
     rows--;
-    console.log("rows:", rows);
   }
+  hoverRow = null;
   render();
 });
 
 delColBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+
   e.stopPropagation();
 
   if (cols > 1 && deleteColIndex !== null) {
 
     cols--;
-    console.log("cols:", cols);
   }
+  hoverCol = null;
   render();
 });
 
