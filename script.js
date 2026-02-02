@@ -96,7 +96,7 @@ delColBtn.addEventListener("mouseenter", () => {
 });
 
 delRowBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+
   e.stopPropagation();
 
   if (rows > 1 && deleteRowIndex !== null) {
@@ -107,7 +107,7 @@ delRowBtn.addEventListener("click", (e) => {
 });
 
 delColBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+
   e.stopPropagation();
 
   if (cols > 1 && deleteColIndex !== null) {
