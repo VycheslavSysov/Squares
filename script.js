@@ -103,6 +103,7 @@ delRowBtn.addEventListener("click", (e) => {
 
     rows--;
   }
+  hoverRow = null;
   render();
 });
 
@@ -114,6 +115,7 @@ delColBtn.addEventListener("click", (e) => {
 
     cols--;
   }
+  hoverCol = null;
   render();
 });
 
