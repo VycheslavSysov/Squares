@@ -51,8 +51,6 @@ body {
 .add { background: #e6a93b; }
 .del { background: #9f1d14; }
 
-/* positioning */
-
 .add-col {
   position: absolute;
   top: 2px;
