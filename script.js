@@ -119,6 +119,16 @@ delColBtn.addEventListener("click", (e) => {
   render();
 });
 
+delRowBtn.addEventListener("mouseleave", (e) => {
+  hoverRow = null;
+  render();
+})
+
+delColBtn.addEventListener("mouseleave", (e) => {
+  hoverCol = null;
+  render();
+})
+
 addRowBtn.addEventListener("click", () => {
   rows++;
   render();
