@@ -8,12 +8,17 @@ const addColBtn = document.getElementById("addCol");
 const delRowBtn = document.getElementById("delRow");
 const delColBtn = document.getElementById("delCol");
 
-let rows = 4;
-let cols = 4;
-let hoverCol = null;
-let hoverRow = null;
-let deleteRowIndex = null;
-let deleteColIndex = null;
+function extracted() {
+  let rows = 4;
+  let cols = 4;
+  let hoverCol = null;
+  let hoverRow = null;
+  let deleteRowIndex = null;
+  let deleteColIndex = null;
+  return {rows, cols, hoverCol, hoverRow, deleteRowIndex, deleteColIndex};
+}
+
+let {rows, cols, hoverCol, hoverRow, deleteRowIndex, deleteColIndex} = extracted();
 
 
 function render() {

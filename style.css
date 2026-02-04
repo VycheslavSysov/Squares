@@ -33,7 +33,7 @@ body {
   font-size: 28px;
   cursor: pointer;
   transition: filter 0.2s, transform 0.15s linear;
-  padding: 1px;
+  padding: 0;
   border: none;
 }
 
@@ -65,14 +65,14 @@ body {
 
 .del-row {
   position: absolute;
-  left: -50px;
+  left: -51px;
   top: 2px;
   display: none;
 }
 
 .del-col {
   position: absolute;
-  top: -50px;
+  top: -51px;
   left: 2px;
   display: none;
 }
