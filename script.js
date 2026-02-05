@@ -2,11 +2,11 @@ const CELL = 50;
 const GAP = 2;
 const STEP = CELL + GAP;
 
-const grid = document.getElementById("grid");
-const addRowBtn = document.getElementById("addRow");
-const addColBtn = document.getElementById("addCol");
-const delRowBtn = document.getElementById("delRow");
-const delColBtn = document.getElementById("delCol");
+const grid = document.querySelector("#grid");
+const addRowBtn = document.querySelector("#addRow");
+const addColBtn = document.querySelector("#addCol");
+const delRowBtn = document.querySelector("#delRow");
+const delColBtn = document.querySelector("#delCol");
 
 let rows = 4;
 let cols = 4;
@@ -16,6 +16,20 @@ let hoverCol = null;
 function toggleButton(btn, show, transform = "") {
   btn.style.display = show ? "block" : "none";
   if (show) btn.style.transform = transform;
+}
+
+function updateDeleteButtons() {
+  toggleButton(
+    delRowBtn,
+    rows > 1 && hoverRow !== null,
+    `translateY(${hoverRow * STEP}px)`
+  );
+
+  toggleButton(
+    delColBtn,
+    cols > 1 && hoverCol !== null,
+    `translateX(${hoverCol * STEP}px)`
+  );
 }
 
 function render() {
@@ -30,29 +44,17 @@ function render() {
       );
     }
   }
+  updateDeleteButtons();
+}
 
-  function hideDeleteButtons() {
+function hideDeleteButtons() {
   hoverRow = null;
   hoverCol = null;
-  render();
+  updateDeleteButtons();
 }
 
 delRowBtn.addEventListener("mouseleave", hideDeleteButtons);
 delColBtn.addEventListener("mouseleave", hideDeleteButtons);
-
-
-  toggleButton(
-    delRowBtn,
-    rows > 1 && hoverRow !== null,
-    `translateY(${hoverRow * STEP}px)`
-  );
-
-  toggleButton(
-    delColBtn,
-    cols > 1 && hoverCol !== null,
-    `translateX(${hoverCol * STEP}px)`
-  );
-}
 
 grid.addEventListener("mousemove", e => {
   const cell = e.target.closest(".cell");
@@ -61,14 +63,14 @@ grid.addEventListener("mousemove", e => {
   hoverRow = +cell.dataset.row;
   hoverCol = +cell.dataset.col;
 
-  render();
+  updateDeleteButtons();
 });
 
 grid.addEventListener("mouseleave", e => {
   if (!e.relatedTarget?.id?.startsWith("del")) {
     hoverRow = null;
     hoverCol = null;
-    render();
+    updateDeleteButtons();
   }
 });
 
@@ -76,15 +78,14 @@ delRowBtn.addEventListener("click", e => {
   e.stopPropagation();
   if (rows > 1) rows--;
   hoverRow = null;
-  const delRowButton = document.querySelector(".del-row");
-  delRowBtn.style.display = "none";
+  render();
 });
 
 delColBtn.addEventListener("click", e => {
   e.stopPropagation();
   if (cols > 1) cols--;
   hoverCol = null;
-  const delColButton = document.querySelector(".del-col");
+  render();
 });
 
 addRowBtn.addEventListener("click", () => {
