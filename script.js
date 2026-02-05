@@ -76,14 +76,15 @@ delRowBtn.addEventListener("click", e => {
   e.stopPropagation();
   if (rows > 1) rows--;
   hoverRow = null;
-  render();
+  const delRowButton = document.querySelector(".del-row");
+  delRowBtn.style.display = "none";
 });
 
 delColBtn.addEventListener("click", e => {
   e.stopPropagation();
   if (cols > 1) cols--;
   hoverCol = null;
-  render();
+  const delColButton = document.querySelector(".del-col");
 });
 
 addRowBtn.addEventListener("click", () => {
