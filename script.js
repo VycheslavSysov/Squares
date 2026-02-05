@@ -2,7 +2,11 @@ const CELL = 50;
 const GAP = 2;
 const STEP = CELL + GAP;
 
-
+const grid = document.querySelector("#grid");
+const addRowBtn = document.querySelector("#addRow");
+const addColBtn = document.querySelector("#addCol");
+const delRowBtn = document.querySelector("#delRow");
+const delColBtn = document.querySelector("#delCol");
 
 let rows = 4;
 let cols = 4;
